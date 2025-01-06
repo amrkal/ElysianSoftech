@@ -1,0 +1,254 @@
+/************************************
+ * Container (both sections side-by-side)
+ ************************************/
+ .container {
+    display: flex;
+    flex-direction: row; /* Puts sections side by side */
+    height: 100vh;       /* Full viewport height (optional) */
+    margin: 0;           /* Reset default margins if needed */
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #f6f6f6;
+    margin: 0; /* Ensure no default body margin */
+  }
+  
+  /************************************
+   * LEFT SECTION
+   ************************************/
+  .left-section {
+    flex: 1.2;               /* Adjust ratio vs. the right side */
+    display: flex;
+    flex-direction: column;
+    background: #3949AB;
+    color: #FFFFFF;
+    position: relative;      /* So the absolutely positioned .logo is contained */
+    align-items: center;
+    justify-content: center; /* Centers content in the column */
+    padding: 2rem;
+    border-radius: 24px 0 0 24px; /* Round left corners only */
+  }
+  
+  /* Logo in the top-left corner */
+  .logo {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+  }
+  .logo img {
+    width: 50px;
+    height: auto;
+  }
+  
+  /* Illustration styling */
+  .illustration img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Main text styling */
+  .main-text {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .main-text h1 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  .main-text p {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  /************************************
+   * RIGHT SECTION & FORM
+   ************************************/
+  .right-section {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 24px 24px 0;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Form container inside the right section */
+  .form-container {
+    width: 380px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    background: #fff; /* If you want a white box effect */
+  }
+  
+  /* Title */
+  .form-container h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3949AB;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  /************************************
+   * INPUT FIELDS
+   ************************************/
+  .input-field {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  
+  /* Hide label text for accessibility */
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  
+  /* Input icon (Email, Lock, etc.) */
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-field input {
+    width: 100%;
+    padding: 12px 40px; /* Room for icon on left */
+    font-size: 14px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+  }
+  
+  /* Eye icon (password toggle) */
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /************************************
+   * FORGOT PASSWORD
+   ************************************/
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 16px;
+  }
+  .forgot-password a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3949AB;
+    text-decoration: none;
+  }
+  
+  /************************************
+   * BUTTONS
+   ************************************/
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    height: 40px;
+  }
+  
+  .primary-btn {
+    width: 100%;
+    background: #3949AB;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+  
+  /************************************
+   * SEPARATOR (OR)
+   ************************************/
+  .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .separator .line {
+    flex: 1;
+    height: 1px;
+    background: #E6E9FA;
+  }
+  .separator span {
+    margin: 0 8px;
+    font-size: 14px;
+    color: #828282;
+  }
+  
+  /************************************
+   * SOCIAL BUTTONS
+   ************************************/
+  .social-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .btn.google-btn,
+  .btn.facebook-btn {
+    flex: 1;
+    border: 1px solid #3949AB;
+    color: #3949AB;
+    background: #fff;
+    gap: 8px;
+  }
+  .google-btn img,
+  .facebook-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /************************************
+   * REGISTER
+   ************************************/
+  .register {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .register span {
+    font-size: 14px;
+    color: #7B7B7B;
+    font-weight: 600;
+  }
+  .register-btn {
+    border: 1px solid #3949AB;
+    background: #fff;
+    color: #3949AB;
+    width: 100%;
+  }
+  .register-btn:hover {
+    background: #3949AB;
+    color: #ffffff;
+    transition: 0.2s ease;
+  }
+  
